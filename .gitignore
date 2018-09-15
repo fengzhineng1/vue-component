@@ -1,3 +1,4 @@
-node_modulesnode
 
 node_modules/
+.cache/
+dist/

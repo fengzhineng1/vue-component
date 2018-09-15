@@ -7,6 +7,7 @@
   <title>Document</title>
 </head>
 <style>
+
   * {
     margin: 0;
     padding: 0;
@@ -21,45 +22,13 @@
     --border-color-hover: #999999;
     --bg-color-active: #cccccc;
   }
-</style>
-<style>
-  .g-button {
-    margin: 10px;
-    font-size: var(--font-size);
-    padding: 0 1em;
-    height: var(--button-heigth);
-    border-radius: var(--border-radius);
-    border: 1px solid #cccccc;
-  }
 
-  .g-button:active {
-    border-color: var(--border-color-active);
-    background-color: var(--bg-color-active);
-  }
-
-  .g-button:hover {
-    border-color: var(--border-color-hover);
-  }
-
-  .g-button:focus {
-    outline: none;
-  }
 </style>
 <body>
+  
   <div id="el">
     <g-button>12</g-button>
   </div>
-
-    <script src="./node_modules/vue/dist/vue.min.js"></script>
-    <script src="./button.js">
-
-    </script>
-  <script>
-    let vm = new Vue({
-      el: '#el'
-    })
-  </script>
-  <script></script>
-
+  <script src="./src/app.js"></script>
 </body>
 </html>
