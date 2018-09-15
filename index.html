@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --button-heigth: 32px;
+    --font-size: 14px;
+    --border-radius: 4px;
+    --border-color-active: #666666;
+    --border-color-hover: #999999;
+    --bg-color-active: #cccccc;
+  }
+</style>
+<style>
+  .g-button {
+    margin: 10px;
+    font-size: var(--font-size);
+    padding: 0 1em;
+    height: var(--button-heigth);
+    border-radius: var(--border-radius);
+    border: 1px solid #cccccc;
+  }
+
+  .g-button:active {
+    border-color: var(--border-color-active);
+    background-color: var(--bg-color-active);
+  }
+
+  .g-button:hover {
+    border-color: var(--border-color-hover);
+  }
+
+  .g-button:focus {
+    outline: none;
+  }
+</style>
+<body>
+  <div id="el">
+    <g-button>12</g-button>
+  </div>
+
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="./button.js">
+
+    </script>
+  <script>
+    let vm = new Vue({
+      el: '#el'
+    })
+  </script>
+  <script></script>
+
+</body>
+</html>
