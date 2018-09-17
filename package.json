@@ -4,7 +4,9 @@
   "description": "presonal learning",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html --no-cache",
+    "dev-test": "parcel watch test/* --no-cache & karma start",
+    "test": "parcel build test/*  --no-cache --no-minify && karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -17,16 +19,28 @@
   },
   "homepage": "https://github.com/fengzhineng1/vue-component#readme",
   "dependencies": {
+    "chai": "^4.1.2",
+    "chai-spies": "^1.0.0",
     "vue": "^2.5.17",
     "vue-hot-reload-api": "^2.3.0"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^2.2.0",
+    "karma": "^3.0.0",
+    "karma-chai": "^0.1.0",
+    "karma-chai-spies": "^0.1.4",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-sinon-chai": "^2.0.2",
+    "mocha": "^5.2.0",
     "node-sass": "^4.9.3",
     "parcel-bundler": "^1.9.7",
+    "puppeteer": "^1.8.0",
+    "sinon": "^6.3.3",
+    "sinon-chai": "^3.2.0",
     "vue-template-compiler": "^2.5.17"
   },
   "alias": {
-    "vue" : "./node_modules/vue/dist/vue.common.js"
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
