@@ -1,0 +1,76 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '--no-cache' ]
+2 info using npm@5.3.0
+3 info using node@v8.3.0
+4 verbose npm-session 82d023e50a3b72d9
+5 verbose publish [ '.' ]
+6 info lifecycle zhineng-1@0.0.1~prepublish: zhineng-1@0.0.1
+7 info lifecycle zhineng-1@0.0.1~prepare: zhineng-1@0.0.1
+8 info lifecycle zhineng-1@0.0.1~prepublishOnly: zhineng-1@0.0.1
+9 info lifecycle zhineng-1@0.0.1~prepack: zhineng-1@0.0.1
+10 verbose tar pack [ '/var/folders/g1/8800z9157zl55lzlnpf3n8mm0000gn/T/npm-13976-934f469e/tmp/packing-c3de29fd/package.tgz',
+10 verbose tar pack   '.' ]
+11 verbose tarball /var/folders/g1/8800z9157zl55lzlnpf3n8mm0000gn/T/npm-13976-934f469e/tmp/packing-c3de29fd/package.tgz
+12 verbose folder .
+13 info lifecycle zhineng-1@0.0.1~postpack: zhineng-1@0.0.1
+14 verbose getPublishConfig undefined
+15 silly mapToRegistry name zhineng-1
+16 silly mapToRegistry using default registry
+17 silly mapToRegistry registry https://registry.npmjs.org/
+18 silly mapToRegistry data { type: 'tag',
+18 silly mapToRegistry   registry: true,
+18 silly mapToRegistry   where: undefined,
+18 silly mapToRegistry   raw: 'zhineng-1',
+18 silly mapToRegistry   name: 'zhineng-1',
+18 silly mapToRegistry   escapedName: 'zhineng-1',
+18 silly mapToRegistry   scope: undefined,
+18 silly mapToRegistry   rawSpec: '',
+18 silly mapToRegistry   saveSpec: null,
+18 silly mapToRegistry   fetchSpec: 'latest',
+18 silly mapToRegistry   gitRange: undefined,
+18 silly mapToRegistry   gitCommittish: undefined,
+18 silly mapToRegistry   hosted: undefined }
+19 silly mapToRegistry uri https://registry.npmjs.org/zhineng-1
+20 verbose publish registryBase https://registry.npmjs.org/
+21 silly publish uploading /var/folders/g1/8800z9157zl55lzlnpf3n8mm0000gn/T/npm-13976-934f469e/tmp/fromDir-dca3a7df/package.tgz
+22 verbose request uri https://registry.npmjs.org/zhineng-1
+23 verbose request sending authorization for write operation
+24 info attempt registry request try #1 at 23:11:40
+25 verbose request using bearer token for auth
+26 verbose request id 54f5ad4b465b698c
+27 http request PUT https://registry.npmjs.org/zhineng-1
+28 http 403 https://registry.npmjs.org/zhineng-1
+29 verbose headers { date: 'Mon, 17 Sep 2018 15:11:43 GMT',
+29 verbose headers   'content-type': 'application/json',
+29 verbose headers   'transfer-encoding': 'chunked',
+29 verbose headers   connection: 'keep-alive',
+29 verbose headers   'set-cookie': [ '__cfduid=df6cc25757f4799bf5cb8ffb5a7eb30f81537197103; expires=Tue, 17-Sep-19 15:11:43 GMT; path=/; domain=.registry.npmjs.org; HttpOnly' ],
+29 verbose headers   'cf-ray': '45bc81c8eec99643-SJC',
+29 verbose headers   'expect-ct': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"',
+29 verbose headers   vary: 'Accept-Encoding',
+29 verbose headers   server: 'cloudflare',
+29 verbose headers   'content-encoding': 'gzip' }
+30 error publish Failed PUT 403
+31 verbose stack Error: you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : zhineng-1
+31 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:314:12)
+31 verbose stack     at RegClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:14)
+31 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:222:7
+31 verbose stack     at Gunzip.onEnd (zlib.js:130:5)
+31 verbose stack     at emitNone (events.js:110:20)
+31 verbose stack     at Gunzip.emit (events.js:207:7)
+31 verbose stack     at endReadableNT (_stream_readable.js:1045:12)
+31 verbose stack     at _combinedTickCallback (internal/process/next_tick.js:138:11)
+31 verbose stack     at process._tickCallback (internal/process/next_tick.js:180:9)
+32 verbose statusCode 403
+33 verbose pkgid zhineng-1
+34 verbose cwd /Users/a1/Documents/totial
+35 verbose Darwin 17.7.0
+36 verbose argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish" "--no-cache"
+37 verbose node v8.3.0
+38 verbose npm  v5.3.0
+39 error code E403
+40 error you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : zhineng-1
+41 verbose exit [ 1, true ]

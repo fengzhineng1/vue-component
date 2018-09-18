@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<link rel="stylesheet" href="/app.2824255b.css"></head>
+<style>
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  :root {
+    --button-heigth: 32px;
+    --font-size: 14px;
+    --border-radius: 4px;
+    --border-color-active: #666666;
+    --border-color-hover: #999999;
+    --bg-color-active: #cccccc;
+  }
+
+</style>
+<body>
+  <div id="el">
+    <g-button name="setting" icon-position="right" @click="isLoading2=!isLoading2" :loading="isLoading2">按钮</g-button>
+    <g-button name="xia" icon-position="" @click="() => { changeLoadingState() }" :loading="isLoading1">按钮</g-button>
+    <g-button name="loading" @click="isLoading=!isLoading" :loading="isLoading" icon-position="left">按钮</g-button>
+    <g-icon name="xiazai"></g-icon>
+    <group-btn class="group-btn">
+      <g-button name="zuo">上一页</g-button>
+      <g-button>更多</g-button>
+      <g-button name="you" icon-position="right">下一页</g-button>
+      <div></div>
+    </group-btn>
+    <div id="test"></div>
+  </div>
+
+  <script src="/app.2824255b.js"></script>
+  <script src="//at.alicdn.com/t/font_839258_vk1hpwa3iv.js"></script>
+</body>
+</html>

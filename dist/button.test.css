@@ -1,0 +1,40 @@
+.icon {
+  height: 1em;
+  width: 1em;
+}@keyframes spin {
+  0 {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+.g-button {
+  vertical-align: middle;
+  font-size: var(--font-size);
+  padding: 0 1em;
+  height: var(--button-heigth);
+  border-radius: var(--border-radius);
+  border: 1px solid #cccccc;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; }
+  .g-button > .wrap-slot {
+    order: 2; }
+  .g-button > .icon {
+    order: 1;
+    margin-right: 2px; }
+  .g-button.icon-right > .wrap-slot {
+    order: 1; }
+  .g-button.icon-right > .icon {
+    order: 2;
+    margin-left: 2px;
+    margin-right: none; }
+  .g-button:active {
+    border-color: var(--border-color-active);
+    background-color: var(--bg-color-active); }
+  .g-button:hover {
+    border-color: var(--border-color-hover); }
+  .g-button:focus {
+    outline: none; }
+
+.spin {
+  animation: spin 1s infinite linear; }
