@@ -10094,7 +10094,7 @@ exports.default = {
     
         /* template */
         Object.assign($3e3b16, (function () {
-          var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"g-button",class:( _obj = {}, _obj[("icon-" + _vm.iconPosition)] = true, _obj ),on:{"click":function($event){_vm.$emit('click', 2)}}},[(_vm.name && !_vm.loading)?_c('g-icon',{attrs:{"name":_vm.name}}):_vm._e(),_vm._v(" "),(_vm.loading)?_c('g-icon',{class:{spin: true, icon: true},attrs:{"name":"loading"}}):_vm._e(),_vm._v(" "),_c('div',{staticClass:"wrap-slot"},[_vm._t("default")],2)],1)
+          var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('button',{staticClass:"g-button ff",class:( _obj = {}, _obj[("icon-" + _vm.iconPosition)] = true, _obj ),on:{"click":function($event){_vm.$emit('click', 2)}}},[(_vm.name && !_vm.loading)?_c('g-icon',{staticClass:"icon",attrs:{"name":_vm.name}}):_vm._e(),_vm._v(" "),(_vm.loading)?_c('g-icon',{class:{spin: true, icon: true},attrs:{"name":"loading"}}):_vm._e(),_vm._v(" "),_c('div',{staticClass:"wrap-slot"},[_vm._t("default")],2)],1)
 var _obj;}
 var staticRenderFns = []
 
