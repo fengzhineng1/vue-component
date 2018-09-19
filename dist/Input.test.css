@@ -1,0 +1,47 @@
+.icon {
+  height: 1em;
+  width: 1em;
+}
+.wrap[data-v-6cbb26] {
+  margin: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrap > input[data-v-6cbb26] {
+    display: inline;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+}
+.wrap > input[data-v-6cbb26]:hover {
+      border-color: #666;
+}
+.wrap > input[data-v-6cbb26]:focus {
+      outline: none;
+      box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.wrap > input.disabled[data-v-6cbb26] {
+      border: 1px solid #999999;
+      background-color: #999999;
+      curor: pointer;
+}
+.wrap > input.readonly[data-v-6cbb26] {
+      border: 1px solid #999999;
+      background-color: #999999;
+      curor: pointer;
+}
+.wrap > input.error[data-v-6cbb26] {
+      border: 1px solid red;
+}
+.wrap .error[data-v-6cbb26] {
+    color: red;
+    font-size: 12px;
+}
+.wrap .error[data-v-6cbb26]:not(:last-child) {
+      margin-right: 3px;
+}
+.wrap .icon-error[data-v-6cbb26] {
+    fill: red;
+}

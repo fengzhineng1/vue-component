@@ -26,20 +26,26 @@
 </style>
 <body>
   <div id="el">
-    <g-button name="setting" icon-position="right" @click="isLoading2=!isLoading2" :loading="isLoading2">按钮</g-button>
-    <g-button name="xia" icon-position="" @click="() => { changeLoadingState() }" :loading="isLoading1">按钮</g-button>
-    <g-button name="loading" @click="isLoading=!isLoading" :loading="isLoading" icon-position="left">按钮</g-button>
-    <g-icon name="xiazai"></g-icon>
-    <group-btn class="group-btn">
-      <g-button  name="zuo">上一页</g-button>
-      <g-button>更多</g-button>
-      <g-button name="you" icon-position="right">下一页</g-button>
-      <div></div>
-    </group-btn>
+    <g-input value="default value"></g-input>
+    <g-input disabled value="default value"></g-input>
+    <g-input readonly value="default value"></g-input>
+    <g-input :error="true" error-message="出错啦"></g-input>
+
+    <div style="margin: 50px">
+        <g-button name="setting" icon-position="right" @click="isLoading2=!isLoading2" :loading="isLoading2">按钮</g-button>
+        <g-button name="xia" icon-position="" @click="() => { changeLoadingState() }" :loading="isLoading1">按钮</g-button>
+        <g-button name="loading" @click="isLoading=!isLoading" :loading="isLoading" icon-position="left">按钮</g-button>
+        <g-icon name="xiazai"></g-icon>
+        <group-btn class="group-btn">
+          <g-button  name="zuo">上一页</g-button>
+          <g-button>更多</g-button>
+          <g-button name="you" icon-position="right">下一页</g-button>
+          <div></div>
+        </group-btn>
+    </div>
     <div id="test"></div>
   </div>
 
   <script src="./src/app.js"></script>
-  <script src="//at.alicdn.com/t/font_839258_vk1hpwa3iv.js"></script>
 </body>
 </html>
