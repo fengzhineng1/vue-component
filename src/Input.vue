@@ -1,9 +1,9 @@
 <template>
   <div class="wrap">
-    <input :value="value" :disabled="disabled"  :readonly="readonly" :class="{ disabled, readonly, error }" />
-    <template class="error" v-if="error">
+    <input :value="value" :disabled="disabled"  :readonly="readonly" :class="{ disabled, readonly, error: errorMessage }" />
+    <template class="error" v-if="errorMessage">
       <Icon name="xia" class="icon-error error"></Icon>
-      <span class="error">{{ errorMessage }}</span>
+      <span class="errorMessage">{{ errorMessage }}</span>
     </template>
   </div>
 </template>
@@ -29,13 +29,9 @@
         default: false,
         type: Boolean
       },
-      error: {
-        default: false,
-        type: Boolean
-      },
       errorMessage: {
         type: String,
-        default: 'error'
+        default: ''
       }
     }
   }
@@ -96,6 +92,11 @@
         margin-right: 3px;
       }
     } 
+
+    .errorMessage {
+      color: $errorColor;
+      font-size: $eFontSize;
+    }
 
     .icon-error {
       fill: $errorColor;

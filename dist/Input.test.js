@@ -10121,13 +10121,9 @@ exports.default = {
       default: false,
       type: Boolean
     },
-    error: {
-      default: false,
-      type: Boolean
-    },
     errorMessage: {
       type: String,
-      default: 'error'
+      default: ''
     }
   }
 }; //
@@ -10148,7 +10144,7 @@ exports.default = {
     
         /* template */
         Object.assign($6cbb26, (function () {
-          var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrap"},[_c('input',{class:{ disabled: _vm.disabled, readonly: _vm.readonly, error: _vm.error },attrs:{"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":_vm.value}}),_vm._v(" "),(_vm.error)?[_c('Icon',{staticClass:"icon-error error",attrs:{"name":"xia"}}),_vm._v(" "),_c('span',{staticClass:"error"},[_vm._v(_vm._s(_vm.errorMessage))])]:_vm._e()],2)}
+          var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrap"},[_c('input',{class:{ disabled: _vm.disabled, readonly: _vm.readonly, error: _vm.errorMessage },attrs:{"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":_vm.value}}),_vm._v(" "),(_vm.errorMessage)?[_c('Icon',{staticClass:"icon-error error",attrs:{"name":"xia"}}),_vm._v(" "),_c('span',{staticClass:"errorMessage"},[_vm._v(_vm._s(_vm.errorMessage))])]:_vm._e()],2)}
 var staticRenderFns = []
 
           return {
@@ -10192,7 +10188,6 @@ describe('Input', function () {
     });
 
     it('value', function () {
-
       vm = new cons({
         propsData: {
           value: '测试'
@@ -10225,23 +10220,44 @@ describe('Input', function () {
       expect(el.readOnly).to.equal(true);
     });
 
-    // it('readonly', () => {
-    //   const cons = Vue.extend(Input)
+    it('error', function () {
+      vm = new cons({
+        propsData: {
+          errorMessage: '报错咯'
+        }
+      }).$mount();
+      var el = vm.$el.querySelector('.errorMessage');
+      expect(el.innerText).to.equal('报错咯');
+    });
+  });
+
+  describe('测试事件', function () {
+
+    var cons = _vue2.default.extend(_input2.default);
+    var vm = void 0;
+    afterEach(function () {
+      vm && vm.$destroy();
+    });
+
+    /* chang事件暂时有问题 */
+
+    // it ('change', () => {
+    //   const pageEl = document.createElement('div')
+    //   pageEl.className = 'test'
+    //   document.body.appendChild(pageEl)
     //   const vm = new cons({
     //     propsData: {
-    //       readonly: true
+    //       value: 'test'
     //     }
-    //   }).$mount()
-    //   console.log('vm:', vm)
-    //   const el = vm.$el.querySelector('input') 
-    //   console.log('el:', el)
-    //   console.log('reado', el.readonly)
-    //   expect(el.readonly).to.equal('readonly')
+    //   }).$mount(pageEl)
+    //   const ev = new Event('change')
+    //   const el = vm.$el.querySelector('input')
+    //   const callback = sinon.fake()
+    //   vm.$on('change', callback)
 
-    //   vm.$el.remove();
-    //   vm.$destroy()
+    //   el.dispatchEvent(ev)
+    //   expect(callback).to.have.been.called
     // })
-
   });
 });
 },{"vue":"ApMz","../src/input":"eGlL"}]},{},["EVZk"], null)

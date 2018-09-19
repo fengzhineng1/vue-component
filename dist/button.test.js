@@ -10192,9 +10192,7 @@ describe('Button', function () {
                 name: 'setting'
             }
         }).$mount();
-        console.log('vm.$el', vm.$el);
         var useElement = vm.$el.querySelector('use');
-        console.log('useElement', useElement);
         expect(useElement.getAttribute('xlink:href')).to.equal('#i-setting');
         vm.$destroy();
     });

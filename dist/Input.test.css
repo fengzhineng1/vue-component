@@ -42,6 +42,10 @@
 .wrap .error[data-v-6cbb26]:not(:last-child) {
       margin-right: 3px;
 }
+.wrap .errorMessage[data-v-6cbb26] {
+    color: red;
+    font-size: 12px;
+}
 .wrap .icon-error[data-v-6cbb26] {
     fill: red;
 }

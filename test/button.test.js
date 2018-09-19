@@ -16,9 +16,7 @@ const expect = chai.expect;
              name: 'setting'
          }
          }).$mount()
-         console.log('vm.$el', vm.$el)
          const useElement = vm.$el.querySelector('use')
-         console.log('useElement', useElement)
          expect(useElement.getAttribute('xlink:href')).to.equal('#i-setting')
          vm.$destroy()
      })
@@ -76,6 +74,5 @@ const expect = chai.expect;
          vm.$on('click', callback)
          vm.$el.click()
          expect(callback).to.have.been.called
-
      })
  })

@@ -93,6 +93,10 @@
 .wrap .error[data-v-71f87c]:not(:last-child) {
       margin-right: 3px;
 }
+.wrap .errorMessage[data-v-71f87c] {
+    color: red;
+    font-size: 12px;
+}
 .wrap .icon-error[data-v-71f87c] {
     fill: red;
 }

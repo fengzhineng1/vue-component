@@ -52,8 +52,39 @@ describe('Input', () => {
       expect(el.readOnly).to.equal(true)
     })
 
-    
+    it('error', () => {
+      vm = new cons({
+        propsData: {
+          errorMessage: '报错咯'
+        }
+      }).$mount()
+      const el = vm.$el.querySelector('.errorMessage')
+      expect(el.innerText).to.equal('报错咯')
+    })
 
+  })
+
+  describe('测试事件', () => {
+
+    const cons = Vue.extend(Input)
+    let vm;
+    afterEach(() => {
+      vm && vm.$destroy();
+    })
+
+    /* chang事件暂时有问题 */
+
+    it ('change', () => {
+
+      const vm = new cons({}).$mount()
+      const ev = new Event('change')
+      const el = vm.$el.querySelector('input')
+      const callback = sinon.fake()
+      vm.$on('change', callback)
+
+      el.dispatchEvent(ev)
+      expect(callback).to.have.been.called
+    })
   })
 
 });

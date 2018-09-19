@@ -10667,13 +10667,9 @@ exports.default = {
       default: false,
       type: Boolean
     },
-    error: {
-      default: false,
-      type: Boolean
-    },
     errorMessage: {
       type: String,
-      default: 'error'
+      default: ''
     }
   }
 }; //
@@ -10706,20 +10702,20 @@ exports.default = {
         class: {
           disabled: _vm.disabled,
           readonly: _vm.readonly,
-          error: _vm.error
+          error: _vm.errorMessage
         },
         attrs: { disabled: _vm.disabled, readonly: _vm.readonly },
         domProps: { value: _vm.value }
       }),
       _vm._v(" "),
-      _vm.error
+      _vm.errorMessage
         ? [
             _c("Icon", {
               staticClass: "icon-error error",
               attrs: { name: "xia" }
             }),
             _vm._v(" "),
-            _c("span", { staticClass: "error" }, [
+            _c("span", { staticClass: "errorMessage" }, [
               _vm._v(_vm._s(_vm.errorMessage))
             ])
           ]
@@ -21895,7 +21891,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51414' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64372' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
