@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row" >
     <slot></slot>
   </div>
 </template>
@@ -12,11 +12,11 @@
         default: 0
       }
     },
+    computed: {
+
+    },
     mounted(){
-      console.log(this.$children)
-      console.log('this.gutter:', this.gutter)
       this.$children.forEach(vm => {
-        console.log('vm:', vm)
         vm.gutter = this.gutter
       })
     }

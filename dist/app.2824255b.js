@@ -10816,13 +10816,11 @@ exports.default = {
       default: 0
     }
   },
+  computed: {},
   mounted: function mounted() {
     var _this = this;
 
-    console.log(this.$children);
-    console.log('this.gutter:', this.gutter);
     this.$children.forEach(function (vm) {
-      console.log('vm:', vm);
       vm.gutter = _this.gutter;
     });
   }
@@ -10902,6 +10900,19 @@ exports.default = {
       default: 0
     }
   },
+  computed: {
+    colStyle: function colStyle() {
+      var gutter = this.gutter;
+
+      return { paddingLeft: gutter / 2 + 'px', paddingRight: gutter / 2 + 'px' };
+    },
+    colClass: function colClass() {
+      var span = this.span,
+          offset = this.offset;
+
+      return [span && 'col-' + span, offset && 'offset-' + offset];
+    }
+  },
   data: function data() {
     return {
       gutter: 0
@@ -10922,21 +10933,10 @@ exports.default = {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "col",
-      class: ((_obj = {}),
-      (_obj["col-" + _vm.span] = true),
-      (_obj["offset-" + _vm.offset] = true),
-      _obj),
-      style: {
-        paddingLeft: _vm.gutter / 2 + "px",
-        paddingRight: _vm.gutter / 2 + "px"
-      }
-    },
+    { staticClass: "col", class: _vm.colClass, style: _vm.colStyle },
     [_vm._t("default")],
     2
   )
-  var _obj
 }
 var staticRenderFns = []
 render._withStripped = true
