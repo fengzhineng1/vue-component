@@ -10109,10 +10109,6 @@ exports.default = {
   },
   name: 'f-input',
   props: {
-    value: {
-      default: '',
-      type: String
-    },
     disabled: {
       default: false,
       type: Boolean
@@ -10124,9 +10120,22 @@ exports.default = {
     errorMessage: {
       type: String,
       default: ''
+    },
+    message: {
+      type: String,
+      default: ''
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10144,7 +10153,7 @@ exports.default = {
     
         /* template */
         Object.assign($6cbb26, (function () {
-          var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrap"},[_c('input',{class:{ disabled: _vm.disabled, readonly: _vm.readonly, error: _vm.errorMessage },attrs:{"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":_vm.value}}),_vm._v(" "),(_vm.errorMessage)?[_c('Icon',{staticClass:"icon-error error",attrs:{"name":"xia"}}),_vm._v(" "),_c('span',{staticClass:"errorMessage"},[_vm._v(_vm._s(_vm.errorMessage))])]:_vm._e()],2)}
+          var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"wrap"},[_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.message),expression:"message"}],class:{ disabled: _vm.disabled, readonly: _vm.readonly, error: _vm.errorMessage },attrs:{"disabled":_vm.disabled,"readonly":_vm.readonly},domProps:{"value":(_vm.message)},on:{"input":[function($event){if($event.target.composing){ return; }_vm.message=$event.target.value},function($event){_vm.$emit('input', 'hi')}],"change":function($event){_vm.$emit('change', 'hi')},"focus":function($event){_vm.$emit('focus', 'hi')},"blur":function($event){_vm.$emit('blur', 'hi')}}}),_vm._v(" "),(_vm.errorMessage)?[_c('Icon',{staticClass:"icon-error error",attrs:{"name":"xia"}}),_vm._v(" "),_c('span',{staticClass:"errorMessage"},[_vm._v(_vm._s(_vm.errorMessage))])]:_vm._e()],2)}
 var staticRenderFns = []
 
           return {
@@ -10187,16 +10196,16 @@ describe('Input', function () {
       expect(_input2.default).to.be.ok;
     });
 
-    it('value', function () {
-      vm = new cons({
-        propsData: {
-          value: '测试'
-        }
-      }).$mount();
+    // it('value', () => {
+    //   vm = new cons({
+    //     propsData: {
+    //       value: '测试'
+    //     }
+    //   }).$mount();
 
-      var el = vm.$el.querySelector('input');
-      expect(el.value).to.equal('测试');
-    });
+    //   const el = vm.$el.querySelector('input');
+    //   expect(el.value).to.equal('测试');
+    // })
 
     it('disabled', function () {
       vm = new cons({
@@ -10239,25 +10248,18 @@ describe('Input', function () {
       vm && vm.$destroy();
     });
 
-    /* chang事件暂时有问题 */
-
-    // it ('change', () => {
-    //   const pageEl = document.createElement('div')
-    //   pageEl.className = 'test'
-    //   document.body.appendChild(pageEl)
-    //   const vm = new cons({
-    //     propsData: {
-    //       value: 'test'
-    //     }
-    //   }).$mount(pageEl)
-    //   const ev = new Event('change')
-    //   const el = vm.$el.querySelector('input')
-    //   const callback = sinon.fake()
-    //   vm.$on('change', callback)
-
-    //   el.dispatchEvent(ev)
-    //   expect(callback).to.have.been.called
-    // })
+    it('change input focus blur', function () {
+      ['change', 'focus', 'input', 'blur'].forEach(function (eventName) {
+        var vm = new cons({}).$mount();
+        var ev = new Event(eventName);
+        var el = vm.$el.querySelector('input');
+        var callback = sinon.fake();
+        vm.$on(eventName, callback);
+        Object.defineProperty(ev, 'target', { value: { value: 'hi' }, enumerable: true });
+        el.dispatchEvent(ev);
+        expect(callback).to.have.been.calledWith('hi');
+      });
+    });
   });
 });
 },{"vue":"ApMz","../src/input":"eGlL"}]},{},["EVZk"], null)

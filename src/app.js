@@ -11,14 +11,37 @@ Vue.component('g-input', Input)
 
 let vm = new Vue({
   el: '#el',
-  data: {
-    isLoading: false,
-    isLoading1: false,
-    isLoading2: false
+  name: 'name',
+  data(){
+    return {
+      name: '123',
+      isLoading: false,
+      isLoading1: false,
+      isLoading2: false,
+      message: 'test'
+    }
+
+  },
+  created(){
   },
   methods: {
-    changeLoadingState(){
+    created() {
+
+    },
+    changeLoadingState(e){
       return !this.isLoading1
+    },
+    changeInput(e){
+      console.log('e', e)
+    },
+    onInput(e){
+      console.log('e', e)
+    },
+    onFocus(e){
+      console.log('e', e)
+    },
+    onBlur(e){
+      console.log('e', e)
     }
   }
 })

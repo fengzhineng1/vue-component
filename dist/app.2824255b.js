@@ -10655,10 +10655,6 @@ exports.default = {
   },
   name: 'f-input',
   props: {
-    value: {
-      default: '',
-      type: String
-    },
     disabled: {
       default: false,
       type: Boolean
@@ -10670,9 +10666,22 @@ exports.default = {
     errorMessage: {
       type: String,
       default: ''
+    },
+    message: {
+      type: String,
+      default: ''
     }
   }
 }; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10699,13 +10708,43 @@ exports.default = {
     { staticClass: "wrap" },
     [
       _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.message,
+            expression: "message"
+          }
+        ],
         class: {
           disabled: _vm.disabled,
           readonly: _vm.readonly,
           error: _vm.errorMessage
         },
         attrs: { disabled: _vm.disabled, readonly: _vm.readonly },
-        domProps: { value: _vm.value }
+        domProps: { value: _vm.message },
+        on: {
+          input: [
+            function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.message = $event.target.value
+            },
+            function($event) {
+              _vm.$emit("input", "hi")
+            }
+          ],
+          change: function($event) {
+            _vm.$emit("change", "hi")
+          },
+          focus: function($event) {
+            _vm.$emit("focus", "hi")
+          },
+          blur: function($event) {
+            _vm.$emit("blur", "hi")
+          }
+        }
       }),
       _vm._v(" "),
       _vm.errorMessage
@@ -21743,14 +21782,34 @@ _vue2.default.component('g-input', _Input2.default);
 
 var vm = new _vue2.default({
   el: '#el',
-  data: {
-    isLoading: false,
-    isLoading1: false,
-    isLoading2: false
+  name: 'name',
+  data: function data() {
+    return {
+      name: '123',
+      isLoading: false,
+      isLoading1: false,
+      isLoading2: false,
+      message: 'test'
+    };
   },
+  created: function created() {},
+
   methods: {
-    changeLoadingState: function changeLoadingState() {
+    created: function created() {},
+    changeLoadingState: function changeLoadingState(e) {
       return !this.isLoading1;
+    },
+    changeInput: function changeInput(e) {
+      console.log('e', e);
+    },
+    onInput: function onInput(e) {
+      console.log('e', e);
+    },
+    onFocus: function onFocus(e) {
+      console.log('e', e);
+    },
+    onBlur: function onBlur(e) {
+      console.log('e', e);
     }
   }
 });
@@ -21891,7 +21950,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64372' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '60987' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

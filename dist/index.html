@@ -26,11 +26,13 @@
 </style>
 <body>
   <div id="el">
-    <g-input value="default value"></g-input>
-    <g-input disabled="" value="default value"></g-input>
-    <g-input readonly="" value="default value"></g-input>
-    <g-input error-message="出错啦"></g-input>
-
+    <g-input></g-input>
+    <g-input disabled=""></g-input>
+    <g-input readonly=""></g-input>
+    <g-input :message="message" error-message="出错啦" @change="changeInput" @input="onInput" @="onFocus" @blur="onBlur"></g-input>
+    {{ message }}
+    <input v-model="message">
+    <input :value="message" @input="message=$event.target.value">
     <div style="margin: 50px">
         <g-button name="setting" icon-position="right" @click="isLoading2=!isLoading2" :loading="isLoading2">按钮</g-button>
         <g-button name="xia" icon-position="" @click="() => { changeLoadingState() }" :loading="isLoading1">按钮</g-button>

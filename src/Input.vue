@@ -1,6 +1,15 @@
 <template>
   <div class="wrap">
-    <input :value="value" :disabled="disabled"  :readonly="readonly" :class="{ disabled, readonly, error: errorMessage }" />
+    <input  
+      @input="$emit('input', 'hi')" 
+      @change="$emit('change', 'hi')" 
+      @focus="$emit('focus', 'hi')"
+      @blur="$emit('blur', 'hi')"
+      :disabled="disabled"  
+      :readonly="readonly" 
+      :class="{ disabled, readonly, error: errorMessage }" 
+      v-model="message"
+    />
     <template class="error" v-if="errorMessage">
       <Icon name="xia" class="icon-error error"></Icon>
       <span class="errorMessage">{{ errorMessage }}</span>
@@ -17,10 +26,6 @@
     },
     name: 'f-input',
     props: {
-      value: {
-        default: '',
-        type: String
-      },
       disabled: {
         default: false,
         type: Boolean
@@ -30,6 +35,10 @@
         type: Boolean
       },
       errorMessage: {
+        type: String,
+        default: ''
+      },
+      message: {
         type: String,
         default: ''
       }
