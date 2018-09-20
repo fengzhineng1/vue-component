@@ -11,7 +11,7 @@
       v-model="message"
     />
     <template class="error" v-if="errorMessage">
-      <Icon name="xia" class="icon-error error"></Icon>
+      <Icon name="error" class="icon-error error"></Icon>
       <span class="errorMessage">{{ errorMessage }}</span>
     </template>
   </div>
