@@ -10983,7 +10983,7 @@ exports.default = {
           xl = this.xl;
 
 
-      return [span && 'col-' + span, offset && 'offset-' + offset].concat(_toConsumableArray(addColClass(sm, 'sm')), _toConsumableArray(addColClass(xs, 'xs')), _toConsumableArray(addColClass(md, 'md')), _toConsumableArray(addColClass(lg, 'lg')), _toConsumableArray(addColClass(xl, 'xl')));
+      return [span && 'col-' + span, offset && 'offset-' + offset].concat(_toConsumableArray(this.addColClass(sm, 'sm')), _toConsumableArray(this.addColClass(xs, 'xs')), _toConsumableArray(this.addColClass(md, 'md')), _toConsumableArray(this.addColClass(lg, 'lg')), _toConsumableArray(this.addColClass(xl, 'xl')));
     }
   },
   data: function data() {

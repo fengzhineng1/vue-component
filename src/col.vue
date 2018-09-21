@@ -82,11 +82,11 @@
         return [ 
           span && `col-${span}`, 
           offset && `offset-${offset}`,
-          ...addColClass(sm, 'sm'),
-          ...addColClass(xs, 'xs'),
-          ...addColClass(md, 'md'),
-          ...addColClass(lg, 'lg'),
-          ...addColClass(xl, 'xl'),
+          ...this.addColClass(sm, 'sm'),
+          ...this.addColClass(xs, 'xs'),
+          ...this.addColClass(md, 'md'),
+          ...this.addColClass(lg, 'lg'),
+          ...this.addColClass(xl, 'xl'),
         ]
       }
     },
