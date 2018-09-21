@@ -10814,9 +10814,21 @@ exports.default = {
     gutter: {
       type: [String, Number],
       default: 0
+    },
+    align: {
+      type: String,
+      validator: function validator(value) {
+        return ['left', 'center', 'right'].indexOf(value) >= 0;
+      }
     }
   },
-  computed: {},
+  computed: {
+    rowStyle: function rowStyle() {
+      var gutter = this.gutter;
+
+      return { marginLeft: -gutter / 2 + 'px', marginRight: -gutter / 2 + 'px' };
+    }
+  },
   mounted: function mounted() {
     var _this = this;
 
@@ -10837,7 +10849,16 @@ exports.default = {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "row" }, [_vm._t("default")], 2)
+  return _c(
+    "div",
+    {
+      staticClass: "row",
+      class: [_vm.align && "align=" + _vm.align],
+      style: _vm.rowStyle
+    },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -10878,6 +10899,9 @@ render._withStripped = true
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 //
 //
 //
@@ -10887,6 +10911,16 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+
+var validator = function validator(value) {
+  var val = false;
+  Object.keys(value).forEach(function (v) {
+    if (['span', 'offset'].includes(v)) {
+      val = true;
+    }
+  });
+  return val;
+};
 
 exports.default = {
   name: 'g-col',
@@ -10898,6 +10932,39 @@ exports.default = {
     offset: {
       type: [String, Number],
       default: 0
+    },
+    xs: {
+      type: Object,
+      validator: validator
+    },
+    sm: {
+      type: Object,
+      validator: validator
+    },
+    md: {
+      type: Object,
+      validator: validator
+    },
+    lg: {
+      type: Object,
+      validator: validator
+    },
+    xl: {
+      type: Object,
+      validator: validator
+    }
+  },
+  methods: {
+    addColClass: function addColClass(obj, name) {
+      var array = [];
+      if (obj && obj.span) {
+        array.push(name + '-span-' + obj.span);
+      }
+
+      if (obj && obj.offset) {
+        array.push(name + '-offset-' + obj.offset);
+      }
+      return array;
     }
   },
   computed: {
@@ -10908,9 +10975,15 @@ exports.default = {
     },
     colClass: function colClass() {
       var span = this.span,
-          offset = this.offset;
+          offset = this.offset,
+          xs = this.xs,
+          sm = this.sm,
+          md = this.md,
+          lg = this.lg,
+          xl = this.xl;
 
-      return [span && 'col-' + span, offset && 'offset-' + offset];
+
+      return [span && 'col-' + span, offset && 'offset-' + offset].concat(_toConsumableArray(addColClass(sm, 'sm')), _toConsumableArray(addColClass(xs, 'xs')), _toConsumableArray(addColClass(md, 'md')), _toConsumableArray(addColClass(lg, 'lg')), _toConsumableArray(addColClass(xl, 'xl')));
     }
   },
   data: function data() {
@@ -22135,7 +22208,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '64372' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54653' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

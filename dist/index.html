@@ -26,11 +26,20 @@
 </style>
 <body>
   <div id="el">
-    <g-row gutter="10">
-      <g-col span="3">1</g-col>
-      <g-col span="1" offset="2">2</g-col>
-      <g-col span="8">3</g-col>
-      <g-col span="8" offset="2">3</g-col>
+    <g-row gutter="30">
+      <g-col :xs="{ span: 4 }" :sm="{ span: 2 }" :md="{ span: 3 }" :lg="{ span: 1 }" :xl="{ span: 2 }" span="3">1</g-col>
+      <g-col span="1" :xs="{ span: 20 }" :sm="{ span: 22 }" :md="{ span: 21 }" :lg="{ span: 23 }" :xl="{ span: 22 }">2</g-col>
+    </g-row>
+
+    <g-row gutter="20">
+      <g-col span="8">1</g-col>
+      <g-col span="10">2</g-col>
+    </g-row>
+
+    <g-row>
+      <g-col :xs="{ span: 8 }" :sm="{ span: 9 }" :md="{ span: 10 }" :lg="{ span: 8 }" :xl="{ span: 12 }"></g-col>
+      <g-col :xs="{ span: 8 }" :sm="{ span: 7 }" :md="{ span: 4 }" :lg="{ span: 11 }" :xl="{ span: 6 }"></g-col>
+      <g-col :xs="{ span: 8 }" :sm="{ span: 9 }" :md="{ span: 10 }" :lg="{ span: 5 }" :xl="{ span: 6 }"></g-col>
     </g-row>
     <g-input></g-input>
     <g-input disabled=""></g-input>
