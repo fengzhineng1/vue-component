@@ -10368,7 +10368,14 @@ require('../svg');
 
 exports.default = {
   props: {
-    name: {}
+    name: {
+      type: String,
+      default: 'xxx'
+    },
+    score: {
+      type: String
+
+    }
   }
 }; //
 //
@@ -11044,7 +11051,484 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"node_modules/assertion-error/index.js":[function(require,module,exports) {
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/layout.vue":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {
+  data: function data() {
+    return {
+      isRow: false
+    };
+  },
+  mounted: function mounted() {
+    var isRow = false;
+    this.$children.forEach(function (vm) {
+      if (vm.$options.name === 'g-sider') {
+        isRow = true;
+      }
+    });
+    this.isRow = isRow;
+  }
+};
+        var $b135ad = exports.default || module.exports;
+      
+      if (typeof $b135ad === 'function') {
+        $b135ad = $b135ad.options;
+      }
+    
+        /* template */
+        Object.assign($b135ad, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "layout", class: { isRow: _vm.isRow } },
+    [_vm._t("default")],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$b135ad', $b135ad);
+          } else {
+            api.reload('$b135ad', $b135ad);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/header.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {};
+        var $9f34b1 = exports.default || module.exports;
+      
+      if (typeof $9f34b1 === 'function') {
+        $9f34b1 = $9f34b1.options;
+      }
+    
+        /* template */
+        Object.assign($9f34b1, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$9f34b1', $9f34b1);
+          } else {
+            api.reload('$9f34b1', $9f34b1);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/content.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {};
+        var $f6ec03 = exports.default || module.exports;
+      
+      if (typeof $f6ec03 === 'function') {
+        $f6ec03 = $f6ec03.options;
+      }
+    
+        /* template */
+        Object.assign($f6ec03, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$f6ec03', $f6ec03);
+          } else {
+            api.reload('$f6ec03', $f6ec03);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/footer.vue":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {};
+        var $028899 = exports.default || module.exports;
+      
+      if (typeof $028899 === 'function') {
+        $028899 = $028899.options;
+      }
+    
+        /* template */
+        Object.assign($028899, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$028899', $028899);
+          } else {
+            api.reload('$028899', $028899);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/sider.vue":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+
+exports.default = {
+  name: 'g-sider'
+};
+        var $eb61fb = exports.default || module.exports;
+      
+      if (typeof $eb61fb === 'function') {
+        $eb61fb = $eb61fb.options;
+      }
+    
+        /* template */
+        Object.assign($eb61fb, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_vm._t("default")], 2)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$eb61fb', $eb61fb);
+          } else {
+            api.reload('$eb61fb', $eb61fb);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/toast.vue":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+  props: {
+    message: {
+      type: String
+    },
+    autoClose: {
+      type: Boolean,
+      default: false
+    },
+    autoCloseTime: {
+      type: [Number, String],
+      default: 3
+    },
+    toastConfig: {
+      type: Object,
+      default: function _default() {
+        return {
+          text: '默认文案',
+          closeCb: function closeCb() {},
+
+          isHtml: falses
+        };
+      }
+    }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    if (this.autoClose) {
+      setTimeout(function () {
+        _this.closeToast();
+      }, this.autoCloseTime * 1000);
+    }
+    this.$nextTick(function () {
+      _this.$refs.line.style.height = _this.$refs.toast.clientHeight + 'px';
+    });
+  },
+
+  methods: {
+    closeToast: function closeToast() {
+      this.$el.remove();
+      this.$destroy();
+      this.toastConfig.toastCb();
+    }
+  }
+};
+        var $9a9715 = exports.default || module.exports;
+      
+      if (typeof $9a9715 === 'function') {
+        $9a9715 = $9a9715.options;
+      }
+    
+        /* template */
+        Object.assign($9a9715, (function () {
+          var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { ref: "toast", staticClass: "toast" },
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { ref: "line", staticClass: "line" }),
+      _vm._v(" "),
+      _c("span", { staticClass: "close", on: { click: _vm.closeToast } }, [
+        _vm._v(_vm._s(_vm.toastConfig.text))
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+          return {
+            render: render,
+            staticRenderFns: staticRenderFns,
+            _compiled: true,
+            _scopeId: null,
+            functional: undefined
+          };
+        })());
+      
+    /* hot reload */
+    (function () {
+      if (module.hot) {
+        var api = require('vue-hot-reload-api');
+        api.install(require('vue'));
+        if (api.compatible) {
+          module.hot.accept();
+          if (!module.hot.data) {
+            api.createRecord('$9a9715', $9a9715);
+          } else {
+            api.reload('$9a9715', $9a9715);
+          }
+        }
+
+        
+        var reloadCSS = require('_css_loader');
+        module.hot.dispose(reloadCSS);
+        module.hot.accept(reloadCSS);
+      
+      }
+    })();
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/plugin.js":[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _toast = require('./toast');
+
+var _toast2 = _interopRequireDefault(_toast);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  install: function install(Vue, options) {
+    Vue.prototype.$toast = function (message, toastConfig, autoClose, autoCloseTime) {
+      var cons = Vue.extend(_toast2.default);
+      var vm = new cons({
+        propsData: {
+          autoClose: autoClose,
+          autoCloseTime: autoCloseTime,
+          toastConfig: {
+            text: '我是哈哈',
+            toastCb: toastConfig.toastCb
+          }
+        }
+      });
+
+      vm.$slots.default = [toastConfig.text];
+      var div = vm.$mount();
+      document.body.appendChild(div.$el);
+    };
+  }
+};
+},{"./toast":"src/toast.vue"}],"node_modules/assertion-error/index.js":[function(require,module,exports) {
 /*!
  * assertion-error
  * Copyright(c) 2013 Jake Luer <jake@qualiancy.com>
@@ -22021,6 +22505,30 @@ var _col = require('./col');
 
 var _col2 = _interopRequireDefault(_col);
 
+var _layout = require('./layout');
+
+var _layout2 = _interopRequireDefault(_layout);
+
+var _header = require('./header');
+
+var _header2 = _interopRequireDefault(_header);
+
+var _content = require('./content');
+
+var _content2 = _interopRequireDefault(_content);
+
+var _footer = require('./footer');
+
+var _footer2 = _interopRequireDefault(_footer);
+
+var _sider = require('./sider');
+
+var _sider2 = _interopRequireDefault(_sider);
+
+var _plugin = require('./plugin');
+
+var _plugin2 = _interopRequireDefault(_plugin);
+
 var _chai = require('chai');
 
 var _chai2 = _interopRequireDefault(_chai);
@@ -22037,6 +22545,19 @@ _vue2.default.component('group-btn', _groupBtn2.default);
 _vue2.default.component('g-input', _Input2.default);
 _vue2.default.component('g-row', _row2.default);
 _vue2.default.component('g-col', _col2.default);
+_vue2.default.component('g-layout', _layout2.default);
+_vue2.default.component('g-header', _header2.default);
+_vue2.default.component('g-content', _content2.default);
+_vue2.default.component('g-footer', _footer2.default);
+_vue2.default.component('g-sider', _sider2.default);
+
+_vue2.default.use(_plugin2.default);
+// 函数参数使用对象，函数内部解构对象
+function a(_ref) {
+  var a = _ref.a,
+      b = _ref.b,
+      c = _ref.c;
+}
 
 var vm = new _vue2.default({
   el: '#el',
@@ -22047,13 +22568,21 @@ var vm = new _vue2.default({
       isLoading: false,
       isLoading1: false,
       isLoading2: false,
-      message: 'test'
+      message: 'test',
+      isShrunk: false
     };
   },
-  created: function created() {},
+  created: function created() {
+    this.$toast('66666666', { text: '<p>test</p>', isHtml: true, toastCb: function toastCb() {
+        console.warn(123);
+      }
+    });
+  },
 
   methods: {
-    created: function created() {},
+    showToast: function showToast() {
+      console.log('this.$toast', this.$toast);
+    },
     changeLoadingState: function changeLoadingState(e) {
       return !this.isLoading1;
     },
@@ -22179,7 +22708,7 @@ var expect = _chai2.default.expect;
   _cons3.$el.remove();
   _cons3.$destroy();
 }
-},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./groupBtn":"src/groupBtn.vue","./Input":"src/Input.vue","./row":"src/row.vue","./col":"src/col.vue","chai":"node_modules/chai/index.js","chai-spies":"node_modules/chai-spies/chai-spies.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"vue":"node_modules/vue/dist/vue.common.js","./button":"src/button.vue","./icon":"src/icon.vue","./groupBtn":"src/groupBtn.vue","./Input":"src/Input.vue","./row":"src/row.vue","./col":"src/col.vue","./layout":"src/layout.vue","./header":"src/header.vue","./content":"src/content.vue","./footer":"src/footer.vue","./sider":"src/sider.vue","./plugin":"src/plugin.js","chai":"node_modules/chai/index.js","chai-spies":"node_modules/chai-spies/chai-spies.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 
@@ -22208,7 +22737,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54653' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49995' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

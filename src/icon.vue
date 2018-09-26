@@ -6,7 +6,12 @@
   export default {
     props: {
       name: {
-
+        type: String,
+        default: 'xxx'
+      },
+      score: {
+        type: String,
+        
       }
     }
   }

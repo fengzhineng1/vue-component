@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
-<style>
+<style lang="scss">
 
   * {
     margin: 0;
@@ -23,75 +23,27 @@
     --bg-color-active: #cccccc;
   }
 
+  .demo {
+    border: 1px solid red;
+    background: #cccccc;
+    height: 100px;
+    flex-grow: 1;
+  }
+
+  .isShrunk {
+    transition: all .3s;
+margin-left: -100%;  }
+
+    .sider {
+      height: 500px;
+      width: 200px;
+      flex-grow: 0;
+    }
 </style>
 <body>
   <div id="el">
-    <g-row gutter="30">
-      <g-col  
-        :xs="{ span: 4 }"
-        :sm="{ span: 2 }"
-        :md="{ span: 3 }"
-        :lg="{ span: 1 }"
-        :xl="{ span: 2 }"
-        span="3"
-      >1</g-col>
-      <g-col 
-        span="1"
-        :xs="{ span: 20 }"
-        :sm="{ span: 22 }"
-        :md="{ span: 21 }"
-        :lg="{ span: 23 }"
-        :xl="{ span: 22 }"  
-      >2</g-col>
-    </g-row>
-
-    <g-row gutter="20">
-      <g-col span="8">1</g-col>
-      <g-col span="10">2</g-col>
-    </g-row>
-
-    <g-row>
-      <g-col
-      :xs="{ span: 8 }"
-      :sm="{ span: 9 }"
-      :md="{ span: 10 }"
-      :lg="{ span: 8 }"
-      :xl="{ span: 12 }"  
-      ></g-col>
-      <g-col
-      :xs="{ span: 8 }"
-      :sm="{ span: 7 }"
-      :md="{ span: 4 }"
-      :lg="{ span: 11 }"
-      :xl="{ span: 6 }"  
-      ></g-col>
-      <g-col
-      :xs="{ span: 8 }"
-      :sm="{ span: 9 }"
-      :md="{ span: 10 }"
-      :lg="{ span: 5 }"
-      :xl="{ span: 6 }"  
-      ></g-col>
-    </g-row>
-    <g-input></g-input>
-    <g-input disabled ></g-input>
-    <g-input readonly ></g-input>
-    <g-input :message="message" error-message="出错啦" @change="changeInput" @input="onInput" @="onFocus" @blur="onBlur"></g-input>
-    {{ message }}
-    <input v-model="message" />
-    <input :value="message" @input="message=$event.target.value" />
-    <div style="margin: 50px">
-        <g-button name="setting" icon-position="right" @click="isLoading2=!isLoading2" :loading="isLoading2">按钮</g-button>
-        <g-button name="xia" icon-position="" @click="() => { changeLoadingState() }" :loading="isLoading1">按钮</g-button>
-        <g-button name="loading" @click="isLoading=!isLoading" :loading="isLoading" icon-position="left">按钮</g-button>
-        <g-icon name="xiazai"></g-icon>
-        <group-btn class="group-btn">
-          <g-button  name="zuo">上一页</g-button>
-          <g-button>更多</g-button>
-          <g-button name="you" icon-position="right">下一页</g-button>
-          <div></div>
-        </group-btn>
-    </div>
+    
+    <g-button @click="showToast">点我</g-button>
     <div id="test"></div>
   </div>
 

@@ -5,6 +5,12 @@ import GroupBtn from './groupBtn'
 import Input from './Input'
 import Row from './row'
 import Col from './col'
+import Layout from './layout'
+import Header from './header'
+import Content from './content'
+import Footer from './footer'
+import Sider from './sider'
+import Plugin from './plugin'
 
 Vue.component('g-button', Button);
 Vue.component('g-icon', Icon);
@@ -12,6 +18,17 @@ Vue.component('group-btn', GroupBtn);
 Vue.component('g-input', Input)
 Vue.component('g-row', Row)
 Vue.component('g-col', Col)
+Vue.component('g-layout', Layout)
+Vue.component('g-header', Header)
+Vue.component('g-content', Content)
+Vue.component('g-footer', Footer)
+Vue.component('g-sider', Sider)
+
+Vue.use(Plugin)
+// 函数参数使用对象，函数内部解构对象
+function a({ a, b, c }) {
+
+}
 
 let vm = new Vue({
   el: '#el',
@@ -22,15 +39,17 @@ let vm = new Vue({
       isLoading: false,
       isLoading1: false,
       isLoading2: false,
-      message: 'test'
+      message: 'test',
+      isShrunk: false
     }
 
   },
   created(){
+    this.$toast('66666666', { text: '<p>test</p>', isHtml: true ,toastCb(){ console.warn(123) } })
   },
   methods: {
-    created() {
-
+    showToast(){
+      console.log('this.$toast', this.$toast)
     },
     changeLoadingState(e){
       return !this.isLoading1

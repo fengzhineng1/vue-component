@@ -742,3 +742,24 @@
     margin-left: 95.83333%; }
   .col.xl-offset-24 {
     margin-left: 100%; } }
+.layout {
+  display: flex;
+  flex-direction: column; }
+  .layout.isRow {
+    flex-direction: row; }
+.toast {
+  display: inline-flex;
+  align-items: center;
+  background-color: #424242;
+  min-height: 40px;
+  padding: 0 10px;
+  color: white;
+  border-radius: 4px;
+  line-height: 1.8; }
+  .toast > .close {
+    flex-shrink: 0;
+    padding-left: 15px; }
+  .toast > .line {
+    height: 100%;
+    border-right: 1px solid #666;
+    margin-left: 16px; }
