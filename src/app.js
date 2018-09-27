@@ -10,7 +10,20 @@ import Header from './header'
 import Content from './content'
 import Footer from './footer'
 import Sider from './sider'
+
+import Tabs from './tabs'
+import TabHead from './tabsHead'
+import TabItem from './tabsItem'
+import TabPanel from './tabsPanel'
+import TabBody from './tabsBody'
+
 import Plugin from './plugin'
+
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tab-head', TabHead)
+Vue.component('g-tab-item', TabItem)
+Vue.component('g-tab-panel', TabPanel)
+Vue.component('g-tab-body', TabBody)
 
 Vue.component('g-button', Button);
 Vue.component('g-icon', Icon);
@@ -25,10 +38,6 @@ Vue.component('g-footer', Footer)
 Vue.component('g-sider', Sider)
 
 Vue.use(Plugin)
-// 函数参数使用对象，函数内部解构对象
-function a({ a, b, c }) {
-
-}
 
 let vm = new Vue({
   el: '#el',
@@ -45,11 +54,17 @@ let vm = new Vue({
 
   },
   created(){
-    this.$toast('66666666', { text: '<p>test</p>', isHtml: true ,toastCb(){ console.warn(123) } })
+    
   },
   methods: {
     showToast(){
-      console.log('this.$toast', this.$toast)
+      this.$toast(
+
+        { 
+          text: '8898', 
+          isHtml: true ,
+          toastCb(){ console.warn(123) } 
+        },'top', true, 2)
     },
     changeLoadingState(e){
       return !this.isLoading1
@@ -175,3 +190,5 @@ const expect = chai.expect
   cons.$el.remove();
   cons.$destroy();
 }
+
+

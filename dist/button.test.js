@@ -10065,7 +10065,14 @@ require('../svg');
 
 exports.default = {
   props: {
-    name: {}
+    name: {
+      type: String,
+      default: 'xxx'
+    },
+    score: {
+      type: String
+
+    }
   }
 }; //
 //

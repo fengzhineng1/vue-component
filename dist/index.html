@@ -42,8 +42,18 @@ margin-left: -100%;  }
 </style>
 <body>
   <div id="el">
-    
-    <g-button @click="showToast">点我</g-button>
+
+    <g-tabs selected="test1">
+      <g-tab-head>
+        <g-tab-item name="test1">1</g-tab-item>
+        <g-tab-item name="test2">2</g-tab-item>
+      </g-tab-head>
+      <g-tab-body>
+        <g-tab-panel name="test2">3</g-tab-panel>
+        <g-tab-panel name="test1">4</g-tab-panel>
+      </g-tab-body>
+    </g-tabs>        
+
     <div id="test"></div>
   </div>
 

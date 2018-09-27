@@ -1,0 +1,26 @@
+.toast {
+  display: inline-flex;
+  align-items: center;
+  background-color: #424242;
+  min-height: 40px;
+  padding: 0 10px;
+  color: white;
+  border-radius: 4px;
+  line-height: 1.8;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%); }
+  .toast.position-middle {
+    top: 50%;
+    transform: translateY(-50%); }
+  .toast.position-top {
+    top: 0; }
+  .toast.position-bottom {
+    bottom: 0; }
+  .toast > .close {
+    flex-shrink: 0;
+    padding-left: 15px; }
+  .toast > .line {
+    height: 100%;
+    border-right: 1px solid #666;
+    margin-left: 16px; }

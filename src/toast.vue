@@ -1,6 +1,6 @@
 <template>
-  <div class="toast" ref="toast">
-    <slot></slot>
+  <div class="toast" :class="[ `position-${toastPosition}` ]" ref="toast">
+    <div v-html="$slots.default[0]"></div>
     <div class="line" ref="line"></div>
     
     <span @click="closeToast" class="close">{{ toastConfig.text }}</span>
@@ -28,9 +28,13 @@
             closeCb(){
               
             },
-            isHtml: falses
+            isHtml: false
           }
         }
+      },
+      toastPosition: {
+        type: String,
+        default: 'bottom'
       }
     },
     mounted() {
@@ -40,6 +44,7 @@
           
         }, this.autoCloseTime * 1000)
       }
+
       this.$nextTick(() => {
         this.$refs.line.style.height = this.$refs.toast.clientHeight+'px';
       })
@@ -64,6 +69,22 @@
     border-radius: 4px;
     line-height: 1.8;
     //justify-content: flex-start;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+
+    &.position-middle {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &.position-top {
+      top: 0;
+    }
+
+    &.position-bottom {
+      bottom: 0;
+    }
 
     > .close {
       flex-shrink: 0;
