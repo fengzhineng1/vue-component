@@ -747,6 +747,34 @@
   flex-direction: column; }
   .layout.isRow {
     flex-direction: row; }
+.wrap-tab-head {
+  display: flex;
+  position: relative;
+  height: 40px;
+  margin: 10px 0;
+  border-bottom: 1px solid gray; }
+  .wrap-tab-head > .line {
+    position: absolute;
+    bottom: 0;
+    border-bottom: 1px solid blue;
+    transition: all .4s; }
+.tab-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 10px;
+  flex-shrink: 0;
+  cursor: pointer; }
+  .tab-item.active {
+    color: blue; }
+  .tab-item.itemDisabled {
+    color: gray;
+    cursor: not-allowed; }
+.tab-panel {
+  display: none;
+  padding: 10px; }
+  .tab-panel.active {
+    display: block; }
 .toast {
   display: inline-flex;
   align-items: center;

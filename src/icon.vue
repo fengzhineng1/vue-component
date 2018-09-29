@@ -7,7 +7,7 @@
     props: {
       name: {
         type: String,
-        default: 'xxx'
+        default: 'setting'
       },
       score: {
         type: String,

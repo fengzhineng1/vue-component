@@ -49,12 +49,19 @@ let vm = new Vue({
       isLoading1: false,
       isLoading2: false,
       message: 'test',
-      isShrunk: false
+      isShrunk: false,
+      doc: {
+        title: '123'
+      }
+
     }
 
   },
   created(){
     
+  },
+  updated() {
+    console.log(1)
   },
   methods: {
     showToast(){
@@ -65,6 +72,9 @@ let vm = new Vue({
           isHtml: true ,
           toastCb(){ console.warn(123) } 
         },'top', true, 2)
+    },
+    yyy(name){
+      console.log('yyy:', name)
     },
     changeLoadingState(e){
       return !this.isLoading1

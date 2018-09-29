@@ -10370,7 +10370,7 @@ exports.default = {
   props: {
     name: {
       type: String,
-      default: 'xxx'
+      default: 'setting'
     },
     score: {
       type: String
@@ -11374,19 +11374,64 @@ render._withStripped = true
       }
     })();
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabs.vue":[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-//
-//
-//
-//
-//
-//
 
-exports.default = {};
+var _vue = require('vue');
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+  props: {
+    content: {
+      type: [String, Number]
+    },
+    selected: {
+      type: String
+    }
+  },
+  created: function created() {
+    // this.eventBus.$emit('selected', this.selected)
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$children.forEach(function (vm) {
+      console.log(vm);
+      if (vm.$options.name === 'g-tab-head') {
+        vm.$children.forEach(function (item) {
+          console.log(item.name);
+
+          if (item.name === _this.selected) {
+            console.log(1);
+            _this.eventBus.$emit('selected', _this.selected, item);
+          }
+        });
+      }
+    });
+  },
+  data: function data() {
+    return {
+      eventBus: new _vue2.default()
+    };
+  },
+  provide: function provide() {
+    return {
+      foo: this.eventBus
+    };
+  }
+}; //
+//
+//
+//
+//
+//
+//
         var $61cd38 = exports.default || module.exports;
       
       if (typeof $61cd38 === 'function') {
@@ -11399,7 +11444,11 @@ exports.default = {};
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._t("default")], 2)
+  return _c(
+    "div",
+    [_vm._v("\n  " + _vm._s(_vm.content) + "\n  "), _vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11434,8 +11483,8 @@ render._withStripped = true
       
       }
     })();
-},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabsHead.vue":[function(require,module,exports) {
-"use strict";
+},{"vue":"node_modules/vue/dist/vue.common.js","_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js"}],"src/tabsHead.vue":[function(require,module,exports) {
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -11445,8 +11494,25 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
 
-exports.default = {};
+exports.default = {
+  inject: ['foo'],
+  mounted: function mounted() {
+    var _this = this;
+
+    this.foo.$on('selected', function (name, vm) {
+      if (vm) {
+        var _vm$$el$getBoundingCl = vm.$el.getBoundingClientRect(),
+            left = _vm$$el$getBoundingCl.left,
+            width = _vm$$el$getBoundingCl.width;
+
+        _this.$refs.line.style.width = width + 'px';
+        _this.$refs.line.style.left = left + 'px';
+      }
+    });
+  }
+};
         var $82b29e = exports.default || module.exports;
       
       if (typeof $82b29e === 'function') {
@@ -11459,7 +11525,16 @@ exports.default = {};
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "wrap-tab-head" },
+    [
+      _vm._t("default"),
+      _vm._v(" "),
+      _c("div", { ref: "line", staticClass: "line" })
+    ],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11495,7 +11570,7 @@ render._withStripped = true
       }
     })();
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabsItem.vue":[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -11506,7 +11581,40 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+exports.default = {
+  inject: ['foo'],
+  props: {
+    name: String | Number,
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.foo.$on('selected', function (name, vm) {
+      if (name === _this.name) {
+        _this.active = true;
+      } else {
+        _this.active = false;
+      }
+    });
+  },
+
+  methods: {
+    tabsChange: function tabsChange(name) {
+      if (this.disabled) return;
+      this.active = true;
+      this.foo.$emit('selected', this.name, this);
+    }
+  }
+};
         var $63521b = exports.default || module.exports;
       
       if (typeof $63521b === 'function') {
@@ -11519,7 +11627,16 @@ exports.default = {};
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._t("default")], 2)
+  return _c(
+    "div",
+    {
+      staticClass: "tab-item",
+      class: { active: _vm.active, itemDisabled: _vm.disabled },
+      on: { click: _vm.tabsChange }
+    },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11555,7 +11672,7 @@ render._withStripped = true
       }
     })();
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabsPanel.vue":[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -11566,7 +11683,33 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+exports.default = {
+  props: {
+    name: {
+      type: String,
+      isRequire: true
+    }
+  },
+  data: function data() {
+    return {
+      active: false
+    };
+  },
+
+  inject: ['foo'],
+  mounted: function mounted() {
+    var _this = this;
+
+    this.foo.$on('selected', function (name) {
+      if (name === _this.name) {
+        console.log('name:', name, '');
+        _this.active = true;
+      } else {
+        _this.active = false;
+      }
+    });
+  }
+};
         var $0c06ae = exports.default || module.exports;
       
       if (typeof $0c06ae === 'function') {
@@ -11579,7 +11722,12 @@ exports.default = {};
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._t("default")], 2)
+  return _c(
+    "div",
+    { staticClass: "tab-panel", class: { active: _vm.active } },
+    [_vm._t("default")],
+    2
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11615,7 +11763,7 @@ render._withStripped = true
       }
     })();
 },{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js","vue-hot-reload-api":"node_modules/vue-hot-reload-api/dist/index.js","vue":"node_modules/vue/dist/vue.common.js"}],"src/tabsBody.vue":[function(require,module,exports) {
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -11626,7 +11774,24 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
-exports.default = {};
+exports.default = {
+  mounted: function mounted() {
+    var _this = this;
+
+    setTimeout(function () {
+      _this.$emit('update:title', 666);
+    }, 2000);
+    this.foo.$emit('selected', 888);
+    this.foo.$on('selected', function (name) {});
+  },
+  data: function data() {
+    return {
+      a: 1
+    };
+  },
+
+  inject: ['foo']
+};
         var $ad1995 = exports.default || module.exports;
       
       if (typeof $ad1995 === 'function') {
@@ -11639,7 +11804,7 @@ exports.default = {};
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._t("default")], 2)
+  return _c("div", { staticClass: "tab-body" }, [_vm._t("default")], 2)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -11819,7 +11984,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
   install: function install(Vue, options) {
     Vue.prototype.$toast = function (message, toastConfig, toastPosition, autoClose, autoCloseTime) {
-      console.log(toastPosition);
       var cons = Vue.extend(_toast2.default);
       var vm = new cons({
         propsData: {
@@ -22896,10 +23060,17 @@ var vm = new _vue2.default({
       isLoading1: false,
       isLoading2: false,
       message: 'test',
-      isShrunk: false
+      isShrunk: false,
+      doc: {
+        title: '123'
+      }
+
     };
   },
   created: function created() {},
+  updated: function updated() {
+    console.log(1);
+  },
 
   methods: {
     showToast: function showToast() {
@@ -22910,6 +23081,9 @@ var vm = new _vue2.default({
           console.warn(123);
         }
       }, 'top', true, 2);
+    },
+    yyy: function yyy(name) {
+      console.log('yyy:', name);
     },
     changeLoadingState: function changeLoadingState(e) {
       return !this.isLoading1;
@@ -23065,7 +23239,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '56898' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '51453' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

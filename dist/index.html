@@ -43,14 +43,19 @@ margin-left: -100%;  }
 <body>
   <div id="el">
 
-    <g-tabs selected="test1">
+    <g-tabs selected="tab2" @selected="" v-bind:title.sync="doc.title" @test3="yyy">
       <g-tab-head>
-        <g-tab-item name="test1">1</g-tab-item>
-        <g-tab-item name="test2">2</g-tab-item>
+        <g-tab-item name="tab1">
+          <g-icon name="setting"></g-icon>
+          tab 1
+        </g-tab-item>
+        <g-tab-item name="tab2">tab 2</g-tab-item>
+        <g-tab-item disabled="" name="tab3">tab 3</g-tab-item>
       </g-tab-head>
       <g-tab-body>
-        <g-tab-panel name="test2">3</g-tab-panel>
-        <g-tab-panel name="test1">4</g-tab-panel>
+        <g-tab-panel name="tab1">content1</g-tab-panel>
+        <g-tab-panel name="tab2">content2</g-tab-panel>
+        <g-tab-panel name="tab3">content3</g-tab-panel>
       </g-tab-body>
     </g-tabs>        
 
