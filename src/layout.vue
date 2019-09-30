@@ -11,6 +11,7 @@
       }
     },
     mounted() {
+      console.log('1', 1)
       let isRow = false
       this.$children.forEach(vm => {
         if (vm.$options.name === 'g-sider') {
